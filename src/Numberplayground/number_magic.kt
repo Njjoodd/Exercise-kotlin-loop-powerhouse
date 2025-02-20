@@ -1,14 +1,17 @@
-package Numberplayground
-
 fun main() {
     val numbers = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
     countUpwards(1, 10)
     countDownwards(10, 1)
+
     val sum = calculateSum(numbers)
     println(sum)
-}
 
+    checkEvenOdd(10)
+
+    val factorial = calculateFactorial(5)
+    println(factorial)
+}
 
 fun countUpwards(start: Int, end: Int) {
     for (i in start..end) {
@@ -32,3 +35,20 @@ fun calculateSum(numbers: IntArray): Int {
     return sum
 }
 
+fun checkEvenOdd(number: Int) {
+    for (i in 1..number) {
+        if (i % 2 == 0) {
+            println("$i is even")
+        } else {
+            println("$i is odd")
+        }
+    }
+}
+
+fun calculateFactorial(number: Int): Int {
+    var factorial = 1
+    for (i in 1..number) {
+        factorial *= i
+    }
+    return factorial
+}
